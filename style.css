@@ -311,6 +311,15 @@ body {
     color: #fff;
 }
 
+.about-group{
+    max-width: 1600px;
+    border: 5px #5a5a5a solid;
+    border-radius: 25px;
+    margin: 20px 10px;
+    text-align: center;
+    background-color: #d1cdcd;
+    color: #a41616;
+}
 .l_justify{
     text-align: left;
 }
