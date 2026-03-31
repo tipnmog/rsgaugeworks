@@ -81,6 +81,10 @@ body {
     color: red;
 }
 
+.rs_blue{
+    color:blue
+}
+
 .pcard{
     display: block;
     min-height: 300px;
