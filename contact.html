@@ -135,8 +135,32 @@
           });
 
           if (res.ok) {
+            // show success message
             successEl.style.display = 'block';
+
+            // Clear all form fields (text, email, textarea, radios/checkboxes)
+            Array.from(form.elements).forEach(function (el) {
+              if (!el.name) return;
+              // keep hidden fields like _subject
+              if (el.type === 'hidden') return;
+              if (el.type === 'checkbox' || el.type === 'radio') {
+                el.checked = false;
+              } else {
+                el.value = '';
+              }
+            });
+
+            // reset as safety (resets default values)
             form.reset();
+
+            // focus the first input for convenience
+            var first = form.querySelector('input, textarea');
+            if (first) first.focus();
+
+            // auto-hide the success message after 5 seconds
+            setTimeout(function () {
+              successEl.style.display = 'none';
+            }, 5000);
           } else {
             const data = await res.json();
             errorEl.textContent = data?.error || 'Submission failed. Please try again.';
