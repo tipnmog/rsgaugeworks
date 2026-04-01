@@ -50,42 +50,39 @@
               </div><!--announce-->
         </div><!--desc-->
       </div><!--hero-->
+      
 
-      <div class="contact-form-container">
-        <h2>Contact Us</h2>
-
-        <form id="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" data-fs-field required />
-          <span data-fs-error="name"></span>
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" data-fs-field required />
-          <span data-fs-error="email"></span>
-
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" data-fs-field />
-
-          <label for="year">Vehicle Year</label>
-          <input type="text" id="year" name="year" data-fs-field />
-          <span data-fs-error="year"></span>
-
-          <label for="make">Make</label>
-          <input type="text" id="make" name="make" data-fs-field />
-          <span data-fs-error="make"></span>
-
-          <label for="model">Model</label>
-          <input type="text" id="model" name="model" data-fs-field />
-          <span data-fs-error="model"></span>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" data-fs-field required></textarea>
-          <span data-fs-error="message"></span>
-
-          <button type="submit" data-fs-submit-btn>Send Message</button>
-        </form>
-          <div data-fs-success class="fs-success" style="display:none;">Thanks — we'll be in touch!</div>
+      <!-- AJAX contact form powered by Formspree (submits without redirect) -->
+      <div class="contact-wrap">
+        <form action="https://formspree.io/f/mwvwbggj" method="POST" class="contact-form" novalidate>
+          <div data-fs-success class="fs-success" style="display:none;">Thanks — we got your message!</div>
           <div data-fs-error class="fs-error" style="display:none;"></div>
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" />
+          </label>
+
+          <label>
+            Email (required)
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Vehicle (required)
+            <input type="text" name="vehicle" requiredplaceholder="Vehicle Make and Model" />
+          </label>
+
+          <label>
+            Message (required)
+            <textarea name="message" rows="5" required placeholder="Your message"></textarea>
+          </label>
+
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New message from bookclubbabes.com" />
+
+          <button type="submit">Send</button>
+        </form>
       </div>
 
     </div><!--main_container-->
