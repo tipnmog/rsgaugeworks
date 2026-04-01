@@ -53,7 +53,8 @@
       
 
       <!-- AJAX contact form powered by Formspree (submits without redirect) -->
-      <div class="contact-wrap">
+      <div class="contact-wrap contact-form-container">
+        <h2>Contact Us</h2>
         <form action="https://formspree.io/f/mwvwbggj" method="POST" class="contact-form" novalidate>
           <div data-fs-success class="fs-success" style="display:none;">Thanks — we got your message!</div>
           <div data-fs-error class="fs-error" style="display:none;"></div>
@@ -65,12 +66,12 @@
 
           <label>
             Email (required)
-            <input type="email" name="email" required />
+            <input type="email" name="email" required placeholder="you@example.com" />
           </label>
 
           <label>
             Vehicle (required)
-            <input type="text" name="vehicle" requiredplaceholder="Vehicle Make and Model" />
+            <input type="text" name="vehicle" required placeholder="Vehicle Make and Model" />
           </label>
 
           <label>
@@ -79,9 +80,9 @@
           </label>
 
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="New message from bookclubbabes.com" />
+          <input type="hidden" name="_subject" value="New message from rsgaugeworks" />
 
-          <button type="submit">Send</button>
+          <button type="submit" data-fs-submit-btn>Send</button>
         </form>
       </div>
 
@@ -107,7 +108,7 @@
       </footer>
     <script src="rscript.js"></script>
     <!-- Place these scripts at the end of the body tag -->
-      <script>
+    <script>
     // Simple year updater for the footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
