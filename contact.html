@@ -109,9 +109,17 @@
 
       </footer>
     <script src="rscript.js"></script>
+    <!-- Place these scripts at the end of the body tag -->
     <script>
-      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-      formspree('initForm', { formElement: '#contact-form', formId: 'xzdkvper' });
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree("initForm", {
+        formElement: "#my-form",
+        formId: "xzdkvper",
+      });
     </script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
